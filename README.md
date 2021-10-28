@@ -1,7 +1,7 @@
 # Hydroframe Frontend
 <div align="center">
 
-[main workflow](https://github.com/hydroframe/hydroframe-frontend/actions/workflows/hydroframe-frontend-ci.yml/badge.svg)
+![main workflow](https://github.com/hydroframe/hydroframe-frontend/actions/workflows/hydroframe-frontend-ci.yml/badge.svg)
 <img src="https://img.shields.io/badge/Made with-React-61dbfb" alt="Website shields.io">
 
 </div>
