@@ -1,0 +1,12 @@
+# syntax=docker/dockerfile:1
+FROM node:16-alpine
+
+# Create app directory
+RUN mkdir -p /frontend
+WORKDIR /frontend
+
+#Copy and install node modules
+COPY package*.json /frontend
+RUN npm install
+
+CMD ["npm", "run", "dev"]
