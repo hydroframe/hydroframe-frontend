@@ -56,6 +56,7 @@
    ```bash
    npm run dev
    ```
+3. Verify the application is running by clicking this link: [http://localhost:3000](http://localhost:3000)
 
 ### Local Development (Docker)
 
@@ -63,10 +64,11 @@
    ```bash
    docker build -f Dockerfile-dev -t {tag_name}
    ```
-2. Run the docker container with the following command (Replace tag_name with that chosen in Step 1 and replace port_number with your chosen port number):
+2. Run the docker container with the following command (Replace tag_name with that chosen in Step 1 and replace port_number with your chosen port number (*usually 3000)):
    ```bash
    docker run -p {port_number}:{port_number} {tag_name}
    ```
+3. Verify the application is running by clicking this link (Default port is 3000): [http://localhost:{chosen_port_number}](http://localhost:3000)
 
 ### Local Development (docker-compose)
 
@@ -78,6 +80,7 @@
    ```bash
    docker-compose up
    ```
+3. Verify the application is running by clicking this link: [http://localhost:3000](http://localhost:3000)
 #### **Note: (node module installation)**
 For *npm install* changes to take effect, the container must be destroyed and rebuilt with the following command:
    ```bash
