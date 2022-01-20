@@ -33,9 +33,13 @@
 
 ### Downloading The Repo
 1. Clone the repository locally with the command:
-   - ```git clone git@github.com:hydroframe/hydroframe-frontend.git```
+   ```bash
+   git clone git@github.com:hydroframe/hydroframe-frontend.git
+   ```
 2. Change directory to the cloned repository using the following command
-   - ```cd hydroframe-frontend```
+   ```bash
+   cd hydroframe-frontend
+   ```
 3. Follow one of the following instruction sets based on your preferred dev environment:
    - [NPM](#local-development-npm)
    - [Docker](#local-development-docker)
@@ -45,26 +49,40 @@
 ### Local Development (NPM)
 
 1. Install node modules using the command:
-   - ```npm install```
+   ```bash
+   npm install
+   ```
 2. Start the development server with the following command:
-   - ```npm run dev```
+   ```bash
+   npm run dev
+   ```
 
 ### Local Development (Docker)
 
 1. Build the docker container using the following command (Replace tag_name with your own unique name):
-   - ```docker build -f Dockerfile-dev -t {tag_name}```
+   ```bash
+   docker build -f Dockerfile-dev -t {tag_name}
+   ```
 2. Run the docker container with the following command (Replace tag_name with that chosen in Step 1 and replace port_number with your chosen port number):
-   - ```docker run -p {port_number}:{port_number} {tag_name}```
+   ```bash
+   docker run -p {port_number}:{port_number} {tag_name}
+   ```
 
 ### Local Development (docker-compose)
 
 1. Build and run the application using the following command:
-   - ```docker-compose build```
+   ```bash
+   docker-compose build
+   ```
 2. Start the container with the following command:
-   - ```docker-compose up```
+   ```bash
+   docker-compose up
+   ```
 #### **Note: (node module installation)**
 For *npm install* changes to take effect, the container must be destroyed and rebuilt with the following command:
-   - ```docker-compose down -v && docker-compose build```
+   ```bash
+   docker-compose down -v && docker-compose build
+   ```
 
 ## Deployment
 
@@ -75,6 +93,10 @@ The following steps should be taken to build and deploy the application containe
 
 ### Steps:
 1. Build the container image with the following command:
-   - ```docker build -f Dockerfile-prod -t {tag_name}```
+   ```bash
+   docker build -f Dockerfile-prod -t {tag_name}
+   ```
 2. Run the image using the following command:
-   - ```docker run -p {port_number}:{port_number} {tag_name}```
+   ```bash
+   docker run -p {port_number}:{port_number} {tag_name}
+   ```
