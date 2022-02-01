@@ -1,0 +1,26 @@
+/* Styles for domain list component */
+.domainlistcontainer {
+    height: fit-content;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+.domainlist {
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+}
+
+.domainlist li {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 0.25rem;
+}
