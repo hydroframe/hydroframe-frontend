@@ -14,3 +14,22 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/*******************************************/
+#desc_label
+{
+  vertical-align: top;
+}
+
+#descbox-style
+{
+    height: 200px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+#btn_padding
+{
+  margin-top: 20px;
+  margin-left: 12%;
+}
