@@ -1,0 +1,13 @@
+.card_style{
+    min-width: 200px;
+    min-height: 200px;
+    margin: 10px;
+    text-align: center; 
+}
+
+.card_style:hover,
+.card_style:focus,
+.card_style:active {
+  color: #1276e9;
+  border-color: #0070f3;
+}
