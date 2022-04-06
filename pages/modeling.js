@@ -31,7 +31,7 @@ const Modeling = () => {
     return (
         <>
             <Grid item xs={12} style={{ margin: "5%" }}>
-                <Link href="/domain">
+                <Link href="/domain" passHref>
                     <Button variant="contained" style={{ marginBottom: "3%" }} startIcon={<AddIcon />}>Create New Domain</Button>
                 </Link>
                 {curState.map((todo, index) => (
@@ -39,7 +39,7 @@ const Modeling = () => {
                 ))}
             </Grid>
 
-            <Link href="/">
+            <Link href="/" passHref>
                 <Button variant="text" style={{ marginBottom: "3%" }} startIcon={<ArrowBackIcon />}>Landing Page</Button>
             </Link>
         </>

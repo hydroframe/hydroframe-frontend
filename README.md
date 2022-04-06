@@ -87,6 +87,17 @@ For *npm install* changes to take effect, the container must be destroyed and re
    docker-compose down -v && docker-compose build
    ```
 
+## Static Deployment
+
+Currently the frontend code is exported as static files and served up by the flask server on Verde. To do this, first make
+sure you have the [flask app repo](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repo. 
+
+```bash
+npm run export
+```
+
+This will build the project, generate the static files, and copy them to the flask repo.
+
 ## Deployment
 
 The following steps should be taken to build and deploy the application container.
