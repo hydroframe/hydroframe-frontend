@@ -4,7 +4,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Link from "next/link";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Modeling = () => {
     const [curState, newState] = useState([
@@ -22,6 +22,12 @@ const Modeling = () => {
         },
 
     ]);
+
+    useEffect(() => {
+        fetch("api/domains")
+            .then(res => res.json())
+            .then(res => console.dir(res));
+    }, []);
 
     const onDelete = index => {
         const temp = [...curState];
