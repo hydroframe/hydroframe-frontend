@@ -48,15 +48,17 @@
 
 ### Local Development (NPM)
 
-1. Install node modules using the command:
+1. Copy the next.config.default.js file to one named next.config.js. Change the value of assetPrefix to correspond to the local environment.
+
+2. Install node modules using the command:
    ```bash
    npm install
    ```
-2. Start the development server with the following command:
+3. Start the development server with the following command:
    ```bash
    npm run dev
    ```
-3. Verify the application is running by clicking this link: [http://localhost:3000](http://localhost:3000)
+4. Verify the application is running by clicking this link: [http://localhost:3000](http://localhost:3000)
 
 ### Local Development (Docker)
 
