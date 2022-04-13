@@ -16,7 +16,7 @@ const Home: NextPage = () => {
           explore data from CONUS simulations, and try the sandtank app.</p>
       </Grid>
       <Grid item xs={12} sm={6} md={5}>
-        <Link href="/modeling">
+        <Link href="/modeling" passHref>
           <a><Card title={"Model Builder"} /></a>
         </Link>
       </Grid>
