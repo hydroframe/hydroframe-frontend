@@ -1,4 +1,4 @@
-import Button_modelling from '../components/Button_modelling';
+import ButtonModeling from '../components/ButtonModeling';
 import { Grid } from "@material-ui/core";
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';

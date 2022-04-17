@@ -4,7 +4,7 @@ import { Grid } from "@material-ui/core";
 import DeleteIcon from '@mui/icons-material/Delete';
 import Link from "next/link"
 
-const Button_modelling = ({todo, index, onDelete}) => {
+const ButtonModeling = ({todo, index, onDelete}) => {
     return (
         <Stack spacing={3} direction="row" style={{margin: "10px"}}>
         <Link href="/domainDisplay"> 
@@ -16,4 +16,4 @@ const Button_modelling = ({todo, index, onDelete}) => {
     )
 }
 
-export default Button_modelling
+export default ButtonModeling
