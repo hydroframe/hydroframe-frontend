@@ -1,4 +1,4 @@
-import Button_modelling from '../components/ButtonModeling';
+import ButtonModeling from '../components/ButtonModeling';
 import { Grid } from "@material-ui/core";
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
@@ -35,7 +35,7 @@ const Modeling = () => {
                     <Button variant="contained" style={{ marginBottom: "3%" }} startIcon={<AddIcon />}>Create New Domain</Button>
                 </Link>
                 {curState.map((todo, index) => (
-                    <Button_modelling index={index} todo={todo} onDelete={onDelete} />
+                    <ButtonModeling index={index} todo={todo} onDelete={onDelete} />
                 ))}
             </Grid>
 

@@ -9,7 +9,7 @@ import Container from '@mui/material/Container'
 
 import React from 'react'
 
-const domainDisplay = () => {
+const DomainDisplay = () => {
     return (
         <div>
             <Container maxWidth="md" style= {{textAlign: "center"}}>
@@ -32,6 +32,6 @@ const domainDisplay = () => {
     )
 }
 
-export default domainDisplay
+export default DomainDisplay
 
 
