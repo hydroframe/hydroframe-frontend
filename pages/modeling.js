@@ -4,7 +4,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Link from "next/link"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Modeling = () => {
     const [curState, newState] = useState([
@@ -23,6 +23,12 @@ const Modeling = () => {
 
     ]);
 
+    useEffect(() => {
+        fetch("api/domains")
+            .then(res => res.json())
+            .then(res => console.dir(res));
+    }, []);
+
     const onDelete = index => {
         const temp = [...curState];
         temp.splice(index, 1);
@@ -31,7 +37,7 @@ const Modeling = () => {
     return (
         <>
             <Grid item xs={12} style={{ margin: "5%" }}>
-                <Link href="/domain">
+                <Link href="/domain" passHref>
                     <Button variant="contained" style={{ marginBottom: "3%" }} startIcon={<AddIcon />}>Create New Domain</Button>
                 </Link>
                 {curState.map((todo, index) => (
@@ -39,7 +45,7 @@ const Modeling = () => {
                 ))}
             </Grid>
 
-            <Link href="/">
+            <Link href="/" passHref>
                 <Button variant="text" style={{ marginBottom: "3%" }} startIcon={<ArrowBackIcon />}>Landing Page</Button>
             </Link>
         </>
