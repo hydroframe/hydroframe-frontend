@@ -1,9 +1,9 @@
-import Button_modelling from '../components/Button_modelling';
+import ButtonModeling from '../components/ButtonModeling';
 import { Grid } from "@material-ui/core";
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Link from "next/link";
+import Link from "next/link"
 import React, { useEffect, useState } from 'react';
 
 const Modeling = () => {
@@ -33,7 +33,7 @@ const Modeling = () => {
         const temp = [...curState];
         temp.splice(index, 1);
         newState(temp);
-    };
+    }
     return (
         <>
             <Grid item xs={12} style={{ margin: "5%" }}>
@@ -41,7 +41,7 @@ const Modeling = () => {
                     <Button variant="contained" style={{ marginBottom: "3%" }} startIcon={<AddIcon />}>Create New Domain</Button>
                 </Link>
                 {curState.map((todo, index) => (
-                    <Button_modelling key={index} index={index} todo={todo} onDelete={onDelete} />
+                    <ButtonModeling index={index} todo={todo} onDelete={onDelete} />
                 ))}
             </Grid>
 
@@ -49,7 +49,7 @@ const Modeling = () => {
                 <Button variant="text" style={{ marginBottom: "3%" }} startIcon={<ArrowBackIcon />}>Landing Page</Button>
             </Link>
         </>
-    );
-};
+    )
+}
 
-export default Modeling;
+export default Modeling
