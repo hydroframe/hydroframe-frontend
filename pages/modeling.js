@@ -24,7 +24,7 @@ const Modeling = () => {
     ]);
 
     useEffect(() => {
-        fetch("api/domains")
+        fetch("/api/domains")
             .then(res => res.json())
             .then(res => console.dir(res));
     }, []);
@@ -45,7 +45,7 @@ const Modeling = () => {
                 ))}
             </Grid>
 
-            <Link href="/" passHref>
+            <Link href="/react" passHref>
                 <Button variant="text" style={{ marginBottom: "3%" }} startIcon={<ArrowBackIcon />}>Landing Page</Button>
             </Link>
         </>

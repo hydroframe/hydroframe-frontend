@@ -23,7 +23,7 @@ const DomainDisplay = () => {
                 <Button variant="contained" style={{ margin: "3%" }}>Subset Conus 1.0</Button>
                 <Button variant="contained" style={{ margin: "3%" }}>Subset Conus 2.0</Button>
             </Container>
-            <Link href="/modeling">
+            <Link href="/modeling" passHref>
                 <Button variant="text" style={{ marginBottom: "3%" }} startIcon={<ArrowBackIcon />}>Previous Page</Button>
             </Link>
 
