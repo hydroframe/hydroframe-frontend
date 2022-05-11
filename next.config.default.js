@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.DEPLOY_STAGE === 'production'
+
 const nextConfig = {
     reactStrictMode: true,
-    assetPrefix: 'https://verde.princeton.edu/pun/dev/pfclm-flask-app',
-    basePath: '/pun/dev/pfclm-flask-app',
+    assetPrefix: isProd ? 'https://verde.princeton.edu/pun/sys/pfclm-flask' : 'http://127.0.0.1:5000',
+    basePath: isProd ? '/pun/sys/pfclm-flask' : '',
     trailingSlash: true
 };
 
