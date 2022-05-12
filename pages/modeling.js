@@ -45,7 +45,7 @@ const Modeling = () => {
                 ))}
             </Grid>
 
-            <Link href="/react" passHref>
+            <Link href="/" passHref>
                 <Button variant="text" style={{ marginBottom: "3%" }} startIcon={<ArrowBackIcon />}>Landing Page</Button>
             </Link>
         </>
