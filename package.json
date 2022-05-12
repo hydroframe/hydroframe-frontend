@@ -2,7 +2,7 @@
   "name": "hydroframe-frontend",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "DEPLOY_STAGE=development && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
