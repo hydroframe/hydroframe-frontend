@@ -50,7 +50,7 @@
 
 ### Local Development (NPM)
 
-1. Copy the `next.config.default.js` file to one named `next.config.js`.
+1. Copy the `next.config.dev.js` file to one named `next.config.js`.
 
 2. Install node modules using the command:
    ```bash
@@ -62,9 +62,9 @@
    ```
 4. Verify the application is running by clicking this link: [http://localhost:3000](http://localhost:3000)
 
-5. Launch the HydroFrame Flask app by following the directions in its [README](https://github.com/hydroframe/pfclm-flask-app).
+5. Launch the HydroFrame Flask app by following the directions in the [README](https://github.com/hydroframe/pfclm-flask-app).
 
-6. The frontend should be running at http://localhost:3000 alond with the backend at http://localhost:5000. You can now develop the frontend interactively and it will send API requests to the locally hosted backend.
+6. The frontend should be running locally at http://localhost:3000 along with the backend at http://localhost:5000. You can now develop the frontend interactively and it will send API requests to the locally hosted backend.
 
 ### Local Development (Docker)
 
@@ -99,13 +99,13 @@ For *npm install* changes to take effect, the container must be destroyed and re
 
 Currently the frontend code is exported as static files and served up by the Flask server on Verde. 
 
-If you are running an export locally, first make sure you have the [Flask app repository](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repository, then run the following command:
+If you are running an export locally, first make sure you have the [Flask app repository](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repository. Copy `next.config.dev.js` to `next.config.js`, and then run the following command:
 
 ```bash
 npm run export:dev
 ```
 
-If you are running an export on Verde:
+If you are running an export on Verde, copy `next.config.prod.js` to `next.config.js` and then run the following command:
 ```bash
 npm run export:prod
 ```

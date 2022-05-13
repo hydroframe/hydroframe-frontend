@@ -2,12 +2,12 @@
   "name": "hydroframe-frontend",
   "private": true,
   "scripts": {
-    "dev": "DEPLOY_STAGE=development && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export:prod": "DEPLOY_STAGE=production && next build && next export && rm -rf /var/www/ood/apps/sys/pfclm-flask/src/pfclm/flask/static/out && cp -r out /var/www/ood/apps/sys/pfclm-flask/src/pfclm/flask/static && rm -rf /home/SHARED/ood/pfclm-flask/src/pfclm/flask/static/out && cp -r out /home/SHARED/ood/pfclm-flask/src/pfclm/flask/static/out",
-    "export:dev": "DEPLOY_STAGE=development && next build && next export && rm -rf ../pfclm-flask-app/src/pfclm/flask/static/out && cp -r out ../pfclm-flask-app/src/pfclm/flask/static/out"
+    "export:prod": "next build && next export && rm -rf /var/www/ood/apps/sys/pfclm-flask/src/pfclm/flask/static/out && cp -r out /var/www/ood/apps/sys/pfclm-flask/src/pfclm/flask/static && rm -rf /home/SHARED/ood/pfclm-flask/src/pfclm/flask/static/out && cp -r out /home/SHARED/ood/pfclm-flask/src/pfclm/flask/static/out",
+    "export:dev": "next build && next export && rm -rf ../pfclm-flask-app/src/pfclm/flask/static/out && cp -r out ../pfclm-flask-app/src/pfclm/flask/static/out"
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
