@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
-    <Grid container spacing={4} justifyContent="center" align="center">
+    <Grid container>
       <Grid item xs={12}>
         <h1> Welcome to HydroFrame</h1>
         <p>Here you can build and run your own model,

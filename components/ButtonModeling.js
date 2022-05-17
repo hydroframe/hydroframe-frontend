@@ -7,7 +7,7 @@ import Link from "next/link"
 const ButtonModeling = ({todo, index, onDelete}) => {
     return (
         <Stack spacing={3} direction="row" style={{margin: "10px"}}>
-        <Link href="/domainDisplay"> 
+        <Link href="/domainDisplay" passHref> 
         <p style={{fontSize: "16px", marginRight: "5px", cursor:"pointer"}}>{todo.text}</p>
         </Link>
         {/* <Button variant="contained">Domain Dashboard</Button>  */}

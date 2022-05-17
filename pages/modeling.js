@@ -5,8 +5,10 @@ import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Link from "next/link"
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Modeling = () => {
+    const [item, setItem] = useState([])
     const [curState, newState] = useState([
         {
             key: 1,
@@ -22,12 +24,18 @@ const Modeling = () => {
         },
 
     ]);
-
     useEffect(() => {
-        fetch("api/domains")
-            .then(res => res.json())
-            .then(res => console.dir(res));
+        axios.get('/api/domains')
+            .then(res => {
+                console.log(res)
+                setItem(res.data.data)
+            });
     }, []);
+    // useEffect(() => {
+    //     fetch("/api/domains")
+    //         .then(res => res.json())
+    //         .then(res => console.dir(res));
+    // }, []);
 
     const onDelete = index => {
         const temp = [...curState];
@@ -37,17 +45,29 @@ const Modeling = () => {
     return (
         <>
             <Grid item xs={12} style={{ margin: "5%" }}>
+                <ul>
+                    {item.map(it => (
+                        <li key={it.id}>
+                            <p> <b>Name:</b> {it.name} </p>
+                            <p> <b>Model:</b> {it.model} </p>
+                            <p> <b>Slug:</b> {it.slug} </p>
+                            <p> <b>Description:</b> {it.description} </p>
+                        </li>
+                    ))}
+                </ul>
+
                 <Link href="/domain" passHref>
                     <Button variant="contained" style={{ marginBottom: "3%" }} startIcon={<AddIcon />}>Create New Domain</Button>
                 </Link>
-                {curState.map((todo, index) => (
-                    <ButtonModeling index={index} todo={todo} onDelete={onDelete} />
+                {item.map((todo, index) => (
+                    <ButtonModeling key={index} index={index} todo={todo} onDelete={onDelete} />
                 ))}
             </Grid>
 
             <Link href="/" passHref>
                 <Button variant="text" style={{ marginBottom: "3%" }} startIcon={<ArrowBackIcon />}>Landing Page</Button>
             </Link>
+
         </>
     )
 }
