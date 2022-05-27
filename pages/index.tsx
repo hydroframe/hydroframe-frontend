@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         </Link>
       </Grid>
       <Grid item xs={12} sm={6} md={5}>
-        <Card title={"Data Explorer"} />
+        <Card title={"Data Explorers"} />
       </Grid>
       <Grid item xs={12} sm={6} md={5}>
         <Card title={"Open SandTask App"} />
