@@ -140,3 +140,40 @@ h1{
   color: red;
 }
 
+.doCenter{
+  text-align: center;
+}
+
+.domain-preview{
+  padding: 10px 16px;
+  margin: 20px;
+  border-bottom: 1px solid #fafafa;
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #212529 ;
+  color: white;
+}
+
+#domain-btn li{
+  display: inline-block;
+}
