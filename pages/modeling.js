@@ -24,7 +24,7 @@ const Modeling = () => {
     ]);
 
     useEffect(() => {
-        fetch("api/domains")
+        fetch("/api/domains")
             .then(res => res.json())
             .then(res => console.dir(res));
     }, []);
@@ -41,7 +41,7 @@ const Modeling = () => {
                     <Button variant="contained" style={{ marginBottom: "3%" }} startIcon={<AddIcon />}>Create New Domain</Button>
                 </Link>
                 {curState.map((todo, index) => (
-                    <ButtonModeling index={index} todo={todo} onDelete={onDelete} />
+                    <ButtonModeling key={index} index={index} todo={todo} onDelete={onDelete} />
                 ))}
             </Grid>
 
