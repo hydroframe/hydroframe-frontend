@@ -11,6 +11,7 @@ const ButtonModeling = ({ item, onDelete, index }) => {
     <>
 
       <table id="customers">
+        <thead>
         <tr>
           <th>ID</th>
           <th>Name</th>
@@ -19,7 +20,9 @@ const ButtonModeling = ({ item, onDelete, index }) => {
           <th>Creation Date</th>
           <th>Actions</th>
         </tr>
+        </thead>
         {item.map((it) => (
+          <tbody key = {it.id}>
           <tr key={it.id} style={{ margin: "5px" }}>
             <td>{it.id}</td>
             <Link
@@ -42,6 +45,7 @@ const ButtonModeling = ({ item, onDelete, index }) => {
               </ul>
             </td>
           </tr>
+          </tbody>
         ))}
       </table>
     </>
