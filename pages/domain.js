@@ -53,8 +53,8 @@ const Domain = () => {
         const descErr = {};
 
         let isValid = true;
-        let isEqual = true;
         let isLess = true;
+        let isEqual = true;
 
         if (name.trim().length == 0) {
             nameErr.nameNull = "Name can not be empty";
