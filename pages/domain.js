@@ -53,6 +53,8 @@ const Domain = () => {
         const descErr = {};
 
         let isValid = true;
+        let isLess = true;
+        let isEqual = true;
 
         if (name.trim().length == 0) {
             nameErr.nameNull = "Name can not be empty";
@@ -67,8 +69,6 @@ const Domain = () => {
             isValid = false;
         } else {
             let size = hId.split(",");
-            let isEqual = true,
-                isLess = true;
             for (var i = 0; i < size.length - 1; i++) {
                 if (size[i].trim().length !== size[i + 1].trim().length) {
                     isEqual = false;
