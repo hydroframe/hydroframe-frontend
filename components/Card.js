@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import styles from "../styles/Riz.module.css";
@@ -12,14 +11,15 @@ const OutlinedCard = ({ title }) => {
       variant="outlined"
       style={{ backgroundColor: "#B2BEB5" }}
     >
-      <CardContent>
-        <Typography>
-          <h2>{title}</h2>
+      <CardContent style={{marginTop: "5%"}}>
+      <Typography variant="h5" gutterBottom component="div">
+          {title}
         </Typography>
       </CardContent>
-      <CardActions></CardActions>
     </Card>
   );
 };
+
+
 
 export default OutlinedCard;
