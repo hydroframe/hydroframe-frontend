@@ -54,7 +54,7 @@ const Modeling = () => {
                         style={{ margin: "3%" }}
                         startIcon={<ArrowBackIcon />}
                     >
-                        Landing Pages2
+                        Landing Pages
                     </Button>
                 </Link>
             </div>
