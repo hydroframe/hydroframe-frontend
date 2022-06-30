@@ -20,7 +20,7 @@ const Domain = () => {
                 name: name,
                 description: desc,
                 geography: arr,
-                model: "CONUS 1",
+                model: "CONUS1",
             });
 
             console.log(data);
