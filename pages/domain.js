@@ -25,7 +25,7 @@ const Domain = () => {
 
             console.log(data);
             axios
-                .post("/api/domains/create", data, {
+                .post(`${process.env.basePath}/api/domains/`, data, {
                     headers: { "Content-Type": "application/json" },
                 })
                 .then(function (response) {
