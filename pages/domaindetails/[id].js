@@ -24,7 +24,7 @@ const DomainDetails = () => {
     const router = useRouter();
     const id = router.query.id;
     useEffect(() => {
-        axios.get("/api/domains/" + id).then((res) => {
+        axios.get(`${process.env.basePath}/api/domains/${id}`).then((res) => {
             console.log(res);
             setItem(res.data);
         });

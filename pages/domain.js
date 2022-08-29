@@ -22,12 +22,12 @@ const Domain = () => {
                 name: name,
                 description: desc,
                 geography: arr,
-                model: "CONUS 1",
+                model: "CONUS1",
             });
 
             //console.log(data);
             axios
-                .post("/api/domains/create", data, {
+                .post(`${process.env.basePath}/api/domains/`, data, {
                     headers: { "Content-Type": "application/json" },
                 })
                 .then(function (response) {

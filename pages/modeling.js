@@ -12,7 +12,7 @@ const Modeling = () => {
     const [item, setItem] = useState([]);
 
     useEffect(() => {
-        axios.get("/api/domains").then((res) => {
+        axios.get(`${process.env.basePath}/api/domains/`).then((res) => {
             console.log(res);
             setItem(res.data.data);
         });
