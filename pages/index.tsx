@@ -21,13 +21,13 @@ const Home: NextPage = () => {
         </Link>
       </Grid>
       <Grid item xs={12} sm={6} md={5}>
-        <Card title={"Data Explorers"} />
+        <Card title={"Data Explorer"} />
       </Grid>
       <Grid item xs={12} sm={6} md={5}>
-        <Card title={"Open SandTask App"} />
+        <Card title={"Open Sandtank App"} />
       </Grid>
       <Grid item xs={12} sm={6} md={5}>
-        <Card title={"Anything Else"} />
+        <Card title={"Launch Apps"} />
       </Grid>
     </Grid>
   );

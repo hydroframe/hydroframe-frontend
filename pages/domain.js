@@ -10,12 +10,14 @@ const Domain = () => {
     const [nameErr, setNameErr] = useState({});
     const [hIdErr, setHIDErr] = useState({});
     const [descErr, setDescErr] = useState({});
+    const [postID, setpostID] = useState({});
     const router = useRouter();
     const OnSubmit = (e) => {
         e.preventDefault();
         const isValid = formValidation();
         if (isValid) {
             const arr = hId.split(",");
+            let id;
             let data = JSON.stringify({
                 name: name,
                 description: desc,
@@ -23,27 +25,30 @@ const Domain = () => {
                 model: "CONUS 1",
             });
 
-            console.log(data);
+            //console.log(data);
             axios
                 .post("/api/domains/create", data, {
                     headers: { "Content-Type": "application/json" },
                 })
                 .then(function (response) {
-                    console.log(response);
+                    console.log(response.data.id);
+                    id = response.data.id;
+                    const doRedirect = () => {   //redirects to the specified page
+                setTimeout(() => {
+                    router.push({
+                        pathname: '/domaindetails/[id]',
+                        query: {id: id}
+                    });
+                }, 1000);
+            };
+
+            doRedirect();
                 })
                 .catch(function (error) {
                     console.log(error.response.data);
                     console.log(error.response.status);
                     console.log(error.response.headers);
                 });
-
-            const doRedirect = () => {
-                setTimeout(() => {
-                    router.push("/modeling");
-                }, 1000);
-            };
-
-            doRedirect();
         }
     };
 
@@ -77,7 +82,6 @@ const Domain = () => {
                 }
             }
             for (var i = 0; i < size.length; i++) {
-                console.log(size[i].length);
                 let len = size[i].length;
                 if (len < 2 || len > 12 || len % 2 != 0) {
                     isLess = false;

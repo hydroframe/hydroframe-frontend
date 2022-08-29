@@ -6,13 +6,17 @@ import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ShareIcon from '@mui/icons-material/Share';
+import ArchiveIcon from '@mui/icons-material/Archive';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import ContentCutIcon from '@mui/icons-material/ContentCut';
 import Link from "next/link";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
     padding: theme.spacing(1),
-    textAlign: "center",
+    textAlign: "left",
     color: theme.palette.text.secondary,
 }));
 const DomainDetails = () => {
@@ -25,14 +29,31 @@ const DomainDetails = () => {
             setItem(res.data);
         });
     }, []);
-
+    const onSubmit = () => {
+        let data = JSON.stringify({
+            id: id,
+            year: 2003,
+        });
+        axios
+        .post("/api/domains/subset", data, {
+            headers: { "Content-Type": "application/json" },
+        })
+        .then(function (response) {
+            console.log(id);
+        })
+        .catch(function (error) {
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+        });
+    }
     return (
         <div>
-            <Stack direction="column" style={{ fontSize: "16px" }}>
-                <Item>
+            <Stack direction="column" style={{ fontSize: "16px", marginLeft: "3%", marginTop: "3%"}}>
+                <div>
                     <h2>Domain Details</h2>
-                </Item>
-                <Item key={item.id} style={{ fontSize: "16px" }}>
+                </div>
+                <div key={item.id} style={{ fontSize: "16px" }}>
                     <p>
 
                         <b>Name:</b> {item.name}
@@ -47,7 +68,18 @@ const DomainDetails = () => {
                     <p>
                         <b>Slug:</b> {item.slug}
                     </p>
-                </Item>
+                    </div>
+                    <div>
+                    <ul id="domain-btn">
+                <li>
+                  <Button style={{ height: "20px", padding: "15px", margin: "5px" }} variant="contained" startIcon={<ContentCutIcon />} onClick={onSubmit}>Subset</Button>
+                  <Button style={{ height: "20px", padding: "15px", margin: "5px" }} variant="contained" color="error" startIcon={<ArchiveIcon />} >Archive</Button>
+                  <Button style={{ height: "20px", padding: "15px", margin: "5px" }} variant="contained" startIcon={<ShareIcon />} >Share</Button>
+                  <Button style={{ height: "20px", padding: "15px" }} variant="contained" startIcon={<ContentCopyIcon />} >Copy</Button>
+
+                </li>
+              </ul>
+                </div>
             </Stack>
             <Link href="/modeling" passHref>
                 <Button
