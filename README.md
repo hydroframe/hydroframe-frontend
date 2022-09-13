@@ -9,16 +9,18 @@
 
 ## Table of Contents:
 - [Hydroframe Frontend](#hydroframe-frontend)
-  - [Table of Contents](#table-of-contents)
+  - [Table of Contents:](#table-of-contents)
   - [Installation and Usage](#installation-and-usage)
     - [Requirements](#requirements)
     - [Downloading The Repo](#downloading-the-repo)
     - [Local Development (NPM)](#local-development-npm)
     - [Local Development (Docker)](#local-development-docker)
     - [Local Development (docker-compose)](#local-development-docker-compose)
+      - [**Note: (node module installation)**](#note-node-module-installation)
+  - [Static Deployment](#static-deployment)
   - [Deployment](#deployment)
-    - [Deployment Requirements](#deployment-requirements)
-    - [Steps](#steps)
+    - [Deployment Requirements:](#deployment-requirements)
+    - [Steps:](#steps)
 
 ## Installation and Usage
 **Please first follow the instructions for downloading the repository locally and then follow the section that best suits your development environment.**
@@ -48,15 +50,21 @@
 
 ### Local Development (NPM)
 
-1. Install node modules using the command:
+1. Copy the `next.config.dev.js` file to one named `next.config.js`.
+
+2. Install node modules using the command:
    ```bash
    npm install
    ```
-2. Start the development server with the following command:
+3. Start the development server with the following command:
    ```bash
    npm run dev
    ```
-3. Verify the application is running by clicking this link: [http://localhost:3000](http://localhost:3000)
+4. Verify the application is running by clicking this link: [http://localhost:3000](http://localhost:3000)
+
+5. Launch the HydroFrame Flask app by following the directions in the [README](https://github.com/hydroframe/pfclm-flask-app).
+
+6. The frontend should be running locally at http://localhost:3000 along with the backend at http://localhost:5000. You can now develop the frontend interactively and it will send API requests to the locally hosted backend.
 
 ### Local Development (Docker)
 
@@ -89,14 +97,20 @@ For *npm install* changes to take effect, the container must be destroyed and re
 
 ## Static Deployment
 
-Currently the frontend code is exported as static files and served up by the flask server on Verde. To do this, first make
-sure you have the [flask app repo](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repo. 
+Currently the frontend code is exported as static files and served up by the Flask server on Verde. 
+
+If you are running an export locally, first make sure you have the [Flask app repository](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repository. Copy `next.config.dev.js` to `next.config.js`, and then run the following command:
 
 ```bash
-npm run export
+npm run export:dev
 ```
 
-This will build the project, generate the static files, and copy them to the flask repo.
+If you are running an export on Verde, copy `next.config.prod.js` to `next.config.js` and then run the following command:
+```bash
+npm run export:prod
+```
+
+These commands will build the project, generate the static files, and copy them to the location of the Flask repository.
 
 ## Deployment
 
