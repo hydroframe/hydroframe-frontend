@@ -26,8 +26,9 @@ const ButtonModeling = ({ item, onDelete, index }) => {
                         <tr key={it.id} style={{ margin: "5px" }}>
                             <td>{it.id}</td>
                             <Link
-                                href="/domaindetails/[id]"
-                                as={`/domaindetails/` + it.id}
+                                href={`/domaindetails/${it.id}`}
+                                // href="/domaindetails/[id]"
+                                // as={`/domaindetails/` + it.id}
                                 passHref><td style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}>{it.name}</td>
                             </Link>
                             <td>{it.username}</td>
