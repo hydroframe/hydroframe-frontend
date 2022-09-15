@@ -1,36 +1,27 @@
-import ButtonModeling from '../components/ButtonModeling';
-import { Grid } from "@material-ui/core";
-import AddIcon from '@mui/icons-material/Add';
-import Button from '@mui/material/Button';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Link from "next/link";
-import Container from '@mui/material/Container'
-
-import React from 'react'
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useRouter } from "next/router";
 const DomainDisplay = () => {
+    const [item, setItem] = useState([])
+    const { query } = useRouter();
+    var pass = query.id
+    useEffect(() => {
+        axios.get('/api/domains/' + pass)
+            .then(res => {
+                console.log(res)
+                setItem(res.data)
+            });
+    }, []);
     return (
-        <div>
-            <Container maxWidth="md" style={{ textAlign: "center" }}>
-                <h1 > My Domain </h1>
-                <p>Image of your domain and names of simulations that have been run with it</p>
-            </Container>
-            <Container maxWidth="md" style={{ textAlign: "center" }}>
-                <h2 > HUC ID: 17050101 </h2>
-                <img src="/1.png" alt="water shed" width="400" height="300" />
-            </Container>
-            <Container maxWidth="sm" style={{ textAlign: "center" }}>
-                <Button variant="contained" style={{ margin: "3%" }}>Subset Conus 1.0</Button>
-                <Button variant="contained" style={{ margin: "3%" }}>Subset Conus 2.0</Button>
-            </Container>
-            <Link href="/modeling" passHref>
-                <Button variant="text" style={{ marginBottom: "3%" }} startIcon={<ArrowBackIcon />}>Previous Page</Button>
-            </Link>
-
-        </div>
+        <ul>
+            <li> id is {pass} </li>
+            <li key={item.pass}>
+                <p> <b>Name:</b> {item.pass} </p>
+                <p> <b>Name:</b> {item.name} </p>
+                <p> <b>Model:</b> {item.model} </p>
+                <p> <b>Slug:</b> {item.slug} </p>
+            </li>
+        </ul>
     )
 }
-
 export default DomainDisplay
-
-

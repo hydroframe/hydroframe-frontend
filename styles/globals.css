@@ -33,3 +33,147 @@ a {
   margin-top: 20px;
   margin-left: 12%;
 }
+
+/************************************************************/
+
+.no-bull{
+  list-style-type: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/*******************[New Domain.js style update]*********************/
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  margin-left: 30px;;
+}
+
+.wrapper{
+  display: grid;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  padding: 0px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  grid-auto-rows: minmax(100px, auto);
+  background-color: #ffffff; 
+  border-radius: 20px;
+
+  box-shadow: 0px 3px 20px rgba(66, 142, 224, 0.633);
+}
+
+#heading{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background-color: #3a85ef;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 5px;
+  grid-row: 1;
+  grid-column: 1/-1;
+
+}
+
+.name-id{
+  grid-column: 1 / 2;
+  grid-row: 2;
+  padding-bottom:20px;
+  padding-top: 30px;
+  padding-left: 30px;
+  border-bottom-left-radius: 20px;
+}
+
+.desc{
+ margin-top: 30px;
+
+}
+#name-id{
+  height: 4em;
+  width: 80%;
+  resize: none;
+}
+
+#enter_huc{
+  height: 10em;
+  width: 80%;
+  resize: none;
+}
+
+#id_list{
+  height: 10em;
+  width: 80%;
+  resize: none;
+}
+
+#desc-box{
+  height: 10em;
+  width: 80%;
+  resize: none;
+}
+
+#id-box{
+  margin-top: 30px;
+}
+
+#id-list-con{
+  padding-top: 35px;
+}
+
+#btn{
+  margin-top: 10px;
+}
+
+#btn-header{
+  background-color: #e7f4ff;
+  
+}
+
+.required:after {
+  content:" *";
+  color: red;
+}
+
+.doCenter{
+  text-align: center;
+}
+
+.domain-preview{
+  padding: 10px 16px;
+  margin: 20px;
+  border-bottom: 1px solid #fafafa;
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #212529 ;
+  color: white;
+}
+
+#domain-btn li{
+  display: inline-block;
+}
