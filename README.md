@@ -97,20 +97,50 @@ For *npm install* changes to take effect, the container must be destroyed and re
 
 ## Static Deployment
 
-Currently the frontend code is exported as static files and served up by the Flask server on Verde. 
+Currently the frontend code is exported as static files and served by the Flask server. The steps to 
 
-If you are running an export locally, first make sure you have the [Flask app repository](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repository. Copy `next.config.dev.js` to `next.config.js`, and then run the following command:
+1. Clone the [Flask app repository](https://github.com/hydroframe/pfclm-flask-app).
 
-```bash
-npm run export:dev
-```
+2. Clone this repository.
 
-If you are running an export on Verde, copy `next.config.prod.js` to `next.config.js` and then run the following command:
-```bash
-npm run export:prod
-```
+3. Before exporting, you must select the appropriate config file for your environment:
 
-These commands will build the project, generate the static files, and copy them to the location of the Flask repository.
+   - If you are exporting the files to host the Flask application **locally**, use the `next.config.dev.js` configuration file. No changes should need to be made to this file - it assumes that the default run configuration for the Flask application.
+   - If you are exporting the files to host the Flask application in **Open OnDemand on Verde**, use the `next.config.prod.js` file. **NOTE**: If you are hosting the application in any location on Verde that is not the production version of the application, you will need to edit the below portions of the file (in brackets): 
+
+   ```bash
+   basePath: '/pun/<sys|dev>/<dir>',
+   assetPrefix: 'https://verde.princeton.edu/pun/<sys|dev>/<dir>',
+   env: {
+        basePath: 'https://verde.princeton.edu/pun/<sys|dev>/<dir>'
+   ```
+
+   For example, if you have the Flask application repo cloned in your development sandbox, the above code would look like:
+  
+   ```bash
+   basePath: '/pun/dev/pfclm-flask',
+   assetPrefix: 'https://verde.princeton.edu/pun/dev/pfclm-flask',
+   env: {
+        basePath: 'https://verde.princeton.edu/pun/dev/pfclm-flask'
+   ```
+  
+4. After selecting and populating the appropriate configuration file, copy the contents to a file named `next.config.js`.
+
+5. Export the static files. 
+
+   If you are developing locally **or** in your development sandbox on Verde, make sure you have the [Flask app repository](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repository. Then run the following command:
+
+   ```bash
+   npm run export:dev
+   ```
+
+   If you would like export the files to the production application on Verde, run the following command:
+   ```bash
+   npm run export:prod
+   ```
+   **NOTE**: Only certain users have the ability to write to the production application. Please contact Princeton IT if you believe you should have these permissions.
+
+   The above commands will build the project, generate the static files, and copy them to the location of the Flask repository. The details of these commands can be found in the ``package.json`` file in this repository and can be customized.
 
 ## Deployment
 
