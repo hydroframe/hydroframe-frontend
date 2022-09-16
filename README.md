@@ -103,10 +103,10 @@ Currently the frontend code is exported as static files and served by the Flask 
 
 2. Clone this repository.
 
-3. Before exporting the static files, you must select the appropriate config file for your environment:
+3. Before exporting, you must select the appropriate config file for your environment:
 
-  - If you are exporting the files to run the app **locally**, use the `next.config.dev.js` configuration file. No changes should need to be made to    this file - it assumes that you will be running the Flask app on port 5000.
-  - If you are exporting the files to run the app in **Open OnDemand on Verde**, use the `next.config.prod.js` file. **NOTE: If you are hosting the application in any location on Verde that is not for the production version of the application, you will need to edit the below portions of the file (in brackets):
+  - If you are exporting the files to host the Flask application **locally**, use the `next.config.dev.js` configuration file. No changes should need to be made to    this file - it assumes that the default run configuration for the Flask application.
+  - If you are exporting the files to host the Flask application in **Open OnDemand on Verde**, use the `next.config.prod.js` file. **NOTE**: If you are hosting the application in any location on Verde that is not the production version of the application, you will need to edit the below portions of the file (in brackets):
 
   ```bash
     basePath: '/pun/<sys|dev>/<dir>',
@@ -115,7 +115,7 @@ Currently the frontend code is exported as static files and served by the Flask 
         basePath: 'https://verde.princeton.edu/pun/<sys|dev>/<dir>'
   ```
 
-  For example, if you have the Flask application repo cloned in your development sandbox, the above code should look like:
+  For example, if you have the Flask application repo cloned in your development sandbox, the above code would look like:
   
     ```bash
     basePath: '/pun/dev/pfclm-flask',
@@ -125,7 +125,7 @@ Currently the frontend code is exported as static files and served by the Flask 
     ```
 4. After selecting and populating the appropriate configuration file, copy the contents to a file named `next.config.js`.
 
-5. After completing the above steps you can now export the static files. 
+5. Export the static files. 
 
   If you are developing locally **or** in your development sandbox on Verde, make sure you have the [Flask app repository](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repository. Then run the following command:
 
@@ -139,7 +139,7 @@ Currently the frontend code is exported as static files and served by the Flask 
   ```
   **NOTE**: Only certain users have the ability to write to the production application. Please contact Princeton IT if you believe you should have these permissions.
 
-  These commands will build the project, generate the static files, and copy them to the location of the Flask repository. The details of these commands can be found in the ``package.json`` file in this repository and can be customized.
+  The above commands will build the project, generate the static files, and copy them to the location of the Flask repository. The details of these commands can be found in the ``package.json`` file in this repository and can be customized.
 
 ## Deployment
 
