@@ -105,7 +105,7 @@ Currently the frontend code is exported as static files and served by the Flask 
 
 3. Before exporting, you must select the appropriate config file for your environment:
 
-  - If you are exporting the files to host the Flask application **locally**, use the `next.config.dev.js` configuration file. No changes should need to be made to    this file - it assumes that the default run configuration for the Flask application.
+  - If you are exporting the files to host the Flask application **locally**, use the `next.config.dev.js` configuration file. No changes should need to be made to this file - it assumes that the default run configuration for the Flask application.
   - If you are exporting the files to host the Flask application in **Open OnDemand on Verde**, use the `next.config.prod.js` file. **NOTE**: If you are hosting the application in any location on Verde that is not the production version of the application, you will need to edit the below portions of the file (in brackets):
 
   ```bash
@@ -127,19 +127,19 @@ Currently the frontend code is exported as static files and served by the Flask 
 
 5. Export the static files. 
 
-  If you are developing locally **or** in your development sandbox on Verde, make sure you have the [Flask app repository](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repository. Then run the following command:
+   If you are developing locally **or** in your development sandbox on Verde, make sure you have the [Flask app repository](https://github.com/hydroframe/pfclm-flask-app) residing at the same level as this repository. Then run the following command:
 
-  ```bash
-  npm run export:dev
-  ```
+   ```bash
+   npm run export:dev
+   ```
 
-  If you would like export the files to the production application on Verde, run the following command:
-  ```bash
-  npm run export:prod
-  ```
-  **NOTE**: Only certain users have the ability to write to the production application. Please contact Princeton IT if you believe you should have these permissions.
+   If you would like export the files to the production application on Verde, run the following command:
+   ```bash
+   npm run export:prod
+   ```
+   **NOTE**: Only certain users have the ability to write to the production application. Please contact Princeton IT if you believe you should have these permissions.
 
-  The above commands will build the project, generate the static files, and copy them to the location of the Flask repository. The details of these commands can be found in the ``package.json`` file in this repository and can be customized.
+   The above commands will build the project, generate the static files, and copy them to the location of the Flask repository. The details of these commands can be found in the ``package.json`` file in this repository and can be customized.
 
 ## Deployment
 
