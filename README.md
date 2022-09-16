@@ -106,7 +106,7 @@ Currently the frontend code is exported as static files and served by the Flask 
 3. Before exporting, you must select the appropriate config file for your environment:
 
    - If you are exporting the files to host the Flask application **locally**, use the `next.config.dev.js` configuration file. No changes should need to be made to this file - it assumes that the default run configuration for the Flask application.
-   - If you are exporting the files to host the Flask application in **Open OnDemand on Verde**, use the `next.config.prod.js` file. **NOTE**: If you are hosting the application in any location on Verde that is not the production version of the application, you will need to edit the below portions of the file (in brackets):
+   - If you are exporting the files to host the Flask application in **Open OnDemand on Verde**, use the `next.config.prod.js` file. **NOTE**: If you are hosting the application in any location on Verde that is not the production version of the application, you will need to edit the below portions of the file (in brackets): 
 
    ```bash
    basePath: '/pun/<sys|dev>/<dir>',
