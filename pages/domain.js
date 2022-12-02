@@ -25,18 +25,19 @@ const Domain = () => {
                 model: "CONUS1",
             });
 
-            //console.log(data);
+            console.log(data);
             axios
-                .post(`${process.env.basePath}/api/domains/`, data, {
+                .post(`${process.env.basePath}/api/domains/create`, data, {
                     headers: { "Content-Type": "application/json" },
                 })
                 .then(function (response) {
                     console.log(response.data.id);
                     id = response.data.id;
+		    console.log("DID THIS EXECUTE?");
                     const doRedirect = () => {   //redirects to the specified page
                 setTimeout(() => {
                     router.push({
-                        pathname: '/domaindetails/[id]',
+                        pathname: '/domaindetails/details',
                         query: {id: id}
                     });
                 }, 1000);
