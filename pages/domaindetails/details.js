@@ -21,13 +21,18 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 //const queryString = window.location.search;
 //const urlParams = new URLSearchParams(queryString);
+
 const DomainDetails = () => {
-    const [item, setItem] = useState([]);
-    const {router} = useRouter();
+    //const [item, setItem] = useState([]);
+    //const {router} = useRouter();
     //console.log("This is a test");
     //console.log(router);
     //const id = router.id;
-    const id = 2;
+    const [item, setItem] = useState([]);
+    const { query } = useRouter();
+    var id = query.id;
+    //const id = 2
+    console.log("Testing from domain details page");
     console.log(id);
     useEffect(() => {
         axios.get(`${process.env.basePath}/api/domains/${id}`).then((res) => {
