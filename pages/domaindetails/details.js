@@ -40,24 +40,16 @@ const DomainDetails = () => {
             setItem(res.data);
         });
     }, []);
+
+
     const onSubmit = () => {
-        let data = JSON.stringify({
-            id: id,
-            year: 2003,
-        });
-        axios
-        .post("/api/domains/subset", data, {
-            headers: { "Content-Type": "application/json" },
-        })
-        .then(function (response) {
-            console.log(id);
-        })
-        .catch(function (error) {
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
+        axios.get(`${process.env.basePath}/api/domains/subset?id=${id}&year=2003`).then((res) => {
+		console.log(res);
+		setItem(res.data);
         });
     }
+
+
     return (
         <div>
             <Stack direction="column" style={{ fontSize: "16px", marginLeft: "3%", marginTop: "3%"}}>
