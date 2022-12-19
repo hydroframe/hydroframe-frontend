@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
-    reactStrictMode: true,
-    trailingSlash: true,
-    env: {
-        basePath: 'http://127.0.0.1:5000'
-    },
+reactStrictMode: true,
+trailingSlash: true,
+basePath: '/pun/dev/pfclm-flask-app',
+assetPrefix: 'https://verde.princeton.edu/pun/dev/pfclm-flask-app',
+env: {
+basePath: 'https://verde.princeton.edu/pun/dev/pfclm-flask-app'
+}
 };
-
 module.exports = nextConfig;
